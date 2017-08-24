@@ -22,6 +22,7 @@ class RVKFilteredTest extends PHPUnit_Framework_TestCase {
 	private $expectedFiltered2 = '{"sfautocomplete": [{ "title" : "Physik/Astronomie, Astrophysik/Astrophysik, Kosmologie/Planetensysteme allgemein, Exoplaneten/Suche nach Exoplaneten"}]}';
 	
 	public function setUp() {
+		
 		// path to configuration .ini file
 		$configPath =  __DIR__ . "/test.ini";
 		$ini = parse_ini_file( $configPath );

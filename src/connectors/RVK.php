@@ -10,7 +10,7 @@ include_once __DIR__ . "/Autocompleter.php";
  * @author Alvaro.Ortiz
  */
 class RVK extends Abstractsearcher implements Searchable {
-	protected $url = 'http://rvk.uni-regensburg.de/api/json/children/'; // the root of the tree
+	protected $url = 'https://rvk.uni-regensburg.de/api/json/children/'; // the root of the tree
 	
 	/**
 	 * Constructor

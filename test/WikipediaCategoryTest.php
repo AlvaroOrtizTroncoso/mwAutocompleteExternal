@@ -34,7 +34,7 @@ class WikipediaCategoryTest extends PHPUnit_Framework_TestCase {
 	public function testSubmit() {
 		$resp = $this->auto->search( $this->query );
 		$this->assertEquals( $this->expected, $resp );
-	} 
+	}
 	
 	/**
 	 * Query with multiple entries separated by ';'

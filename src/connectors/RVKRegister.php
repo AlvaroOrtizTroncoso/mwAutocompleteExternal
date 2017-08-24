@@ -19,6 +19,7 @@ class RVKRegister extends AbstractSearcher implements Searchable {
 	 * @param Snoopy $snoopy Class to simulate a web browser
 	 */
 	public function __construct( $snoopy ) {
+		
 		$this->init( $snoopy );
 	}
 	
@@ -26,8 +27,8 @@ class RVKRegister extends AbstractSearcher implements Searchable {
 	 * (non-PHPdoc)
 	 * @see Autocompleter::search()
 	 */
-	public function search( $query ) {	
-		$url = sprintf( 'http://rvk.uni-regensburg.de/api/json/register/' . $query );
+	public function search( $query ) {
+		$url = sprintf( 'https://rvk.uni-regensburg.de/api/json/register/' . $query );
 		$response = $this->getJson( $url );
 		
 		// list the node paths
@@ -61,7 +62,7 @@ class RVKRegister extends AbstractSearcher implements Searchable {
 	 * @param array $nodes
 	 */
 	protected function getNodePaths( array $nodes ) {
-		$url = sprintf( 'http://rvk.uni-regensburg.de/api/json/ancestors/' );
+		$url = sprintf( 'https://rvk.uni-regensburg.de/api/json/ancestors/' );
 		$path = [];
 		foreach( $nodes as $id ) {
 			$response = $this->submit( $url . urlencode( $id ) );

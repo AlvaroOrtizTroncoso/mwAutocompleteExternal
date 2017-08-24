@@ -20,6 +20,7 @@ class RVKFiltered extends RVKRegister implements Searchable {
 	 * @param Snoopy $snoopy Class to simulate a web browser
 	 */
 	public function __construct( $snoopy, $filter='' ) {
+		
 		$this->init( $snoopy );
 		$this->filter = explode('|', $filter);
 	}
@@ -28,11 +29,12 @@ class RVKFiltered extends RVKRegister implements Searchable {
 	 * (non-PHPdoc)
 	 * @see Autocompleter::search()
 	 */
-	public function search( $query ) {
+	public function search( $query ) {		
 		$found = [];
 		$list = [];
-		foreach( $this->filter as $entry ) {
-			$url = sprintf( 'http://rvk.uni-regensburg.de/api/json/register/' . $entry );
+		
+		foreach( $this->filter as $entry ) {			
+			$url = sprintf( 'https://rvk.uni-regensburg.de/api/json/register/' . $entry );
 			$response = $this->getJson( $url );
 			
 			// list the node paths

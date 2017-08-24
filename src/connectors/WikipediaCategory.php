@@ -37,13 +37,13 @@ class WikipediaCategory extends AbstractSearcher implements Searchable {
 		$list = [];
 		foreach( $this->category as $entry ) {
 			// get the category from Wikipedia
-			$url = sprintf( "http://%s.wikipedia.org/w/api.php?action=query&list=categorymembers&cmlimit=500&cmprop=title&format=json&cmtitle=Category:%s", $this->lang, urlencode( $entry ) );
+			$url = sprintf( "https://%s.wikipedia.org/w/api.php?action=query&list=categorymembers&cmlimit=500&cmprop=title&format=json&cmtitle=Category:%s", $this->lang, urlencode( $entry ) );
 			$json = $this->getJson( $url );
 			// list the category page titles
 			$parsed = $this->parse( $json );
 			$list = array_merge( $list, $parsed );
 		}
-						
+		
 		// search the category page titles
 		foreach( $list as $entry) {
 			if ( stripos( $entry, $query ) !== FALSE ) {

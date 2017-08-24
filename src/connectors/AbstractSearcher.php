@@ -37,6 +37,7 @@ abstract class AbstractSearcher {
 	 */
 	protected function getJson( $url ) {
 		$response = $this->submit( $url );
+		
 		// make sure encoding is correct
 		$response = utf8_encode( $response );
 		$json = json_decode($response, true);

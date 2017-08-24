@@ -9,7 +9,7 @@ include_once __DIR__ . "/Autocompleter.php";
  * @author Alvaro.Ortiz
  */
 class Wikispecies extends AbstractSearcher implements Searchable {	
-	protected $wikispeciesUrl = "http://species.wikimedia.org/w/api.php?action=opensearch&format=json&search=";
+	protected $wikispeciesUrl = "https://species.wikimedia.org/w/api.php?action=opensearch&format=json&search=";
 	
 	/**
 	 * Constructor
